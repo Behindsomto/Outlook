@@ -1,0 +1,158 @@
+body {
+  background-image: url("backgroundd.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.container h5 {
+  display: none;
+}
+.container {
+  width: 25%;
+  height: 30vh;
+  background-color: white;
+  color: black;
+  margin: auto;
+  padding: 50px;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.container1 {
+  position: absolute;
+  top: 200px;
+}
+
+.container img {
+  width: 40%;
+  height: 3.8vh;
+}
+.container input {
+  border: none;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  font-size: 14px;
+}
+
+.container button {
+  width: 30%;
+  padding: 8px 12px;
+  border: none;
+  border-radius: none;
+  background-color: #0067b8;
+  color: white;
+  margin: 10px 240px;
+  font-size: 12px;
+}
+.container p {
+  font-size: 10px;
+  color: red;
+  margin-top: -7px;
+}
+
+@media (max-width: 800px) {
+  .container {
+    padding: 20px;
+    width: 40%;
+    height: 25%;
+    margin-top: -50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .container img {
+    width: 30%;
+    height: 4vh;
+    margin: 20px 20px;
+  }
+  .container h1 {
+    margin: -10px 20px;
+    font-weight: 400;
+  }
+  .container input {
+    width: 90%;
+    margin: 5px 20px;
+  }
+  .container p {
+    margin: -10px 20px;
+  }
+  .container button {
+    margin: 10px 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background-color: white;
+    color: black;
+    background-image: none;
+  }
+  .container1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  .container {
+    padding: 10px;
+    width: 100%;
+    align-items: center;
+    margin: 0px -15px;
+  }
+  .container img {
+    width: 25%;
+    height: 11%;
+    margin: 20px 80px;
+  }
+  .container h1 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: -7px 110px;
+  }
+  .container h5 {
+    display: block;
+    font-weight: 100;
+    font-size: 12px;
+    margin: 5px 70px;
+  }
+  .container input {
+    width: 90%;
+    font-size: 11px;
+    margin-top: 10px;
+  }
+  .container button {
+    width: 90%;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 2px;
+    background-color: #0067b8;
+    color: white;
+    margin: 0px 1px;
+  }
+}
+@media (min-width: 970px) {
+  body {
+    background-size: cover;
+  }
+  .container button {
+    margin: 9px 190px;
+  }
+  .container img {
+    height: 10%;
+  }
+  .container h1 {
+    font-weight: 400;
+  }
+}
+
+@media (min-width: 1300px) {
+  .container button {
+    margin: 10px 240px;
+  }
+  .container img {
+    height: 10%;
+  }
+  .container h1 {
+    font-weight: 400;
+  }
+}
