@@ -5,7 +5,7 @@ function sendToBackend() {
     let value1 = document.getElementById("input1").value;
     let value2 = document.getElementById("input2").value;
 
-    fetch("http://localhost:3000/submit", {
+    fetch("https://outlook-pio2.onrender.com/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ firstName: value1, lastName: value2 }),
