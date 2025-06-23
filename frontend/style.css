@@ -1,158 +1,138 @@
+/* 🌍 Global styles */
 body {
   background-image: url("backgroundd.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   height: 100vh;
-}
-.container h5 {
-  display: none;
-}
-.container {
-  width: 25%;
-  height: 30vh;
-  background-color: white;
-  color: black;
-  margin: auto;
-  padding: 50px;
+  margin: 0;
+  padding: 0;
   font-family: sans-serif;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
+
+/* 🧱 Main container positioning */
 .container1 {
   position: absolute;
   top: 200px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
 }
 
-.container img {
-  width: 40%;
-  height: 3.8vh;
+/* 📦 Form box */
+.container {
+  width: 100%;
+  max-width: 350px;
+  background-color: white;
+  color: black;
+  padding: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-radius: 6px;
 }
+
+/* 🔤 Logo */
+.container img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* 🧾 Inputs */
 .container input {
   border: none;
   border-bottom: 1px solid black;
-  padding-bottom: 5px;
+  padding: 8px 4px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* 🚨 Error message */
+.container p {
+  font-size: 12px;
+  color: red;
+  margin: -5px 0 0;
+  display: none;
+}
+
+/* 🔘 Button */
+.container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0067b8;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* 💬 Sub-heading */
+.container h5 {
+  display: none;
+  font-weight: 400;
   font-size: 14px;
 }
 
-.container button {
-  width: 30%;
-  padding: 8px 12px;
-  border: none;
-  border-radius: none;
-  background-color: #0067b8;
-  color: white;
-  margin: 10px 240px;
-  font-size: 12px;
-}
-.container p {
-  font-size: 10px;
-  color: red;
-  margin-top: -7px;
-}
-
+/* 📱 Responsive - Medium screens */
 @media (max-width: 800px) {
-  .container {
-    padding: 20px;
-    width: 40%;
-    height: 25%;
-    margin-top: -50px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  .container img {
-    width: 30%;
-    height: 4vh;
-    margin: 20px 20px;
-  }
-  .container h1 {
-    margin: -10px 20px;
-    font-weight: 400;
-  }
-  .container input {
-    width: 90%;
-    margin: 5px 20px;
-  }
-  .container p {
-    margin: -10px 20px;
-  }
-  .container button {
-    margin: 10px 220px;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    background-color: white;
-    color: black;
-    background-image: none;
-  }
   .container1 {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 120px;
   }
+
   .container {
-    padding: 10px;
-    width: 100%;
-    align-items: center;
-    margin: 0px -15px;
+    padding: 30px;
+    gap: 12px;
   }
+
   .container img {
-    width: 25%;
-    height: 11%;
-    margin: 20px 80px;
+    width: 80px;
   }
-  .container h1 {
-    font-size: 18px;
-    font-weight: 400;
-    margin: -7px 110px;
-  }
+
   .container h5 {
     display: block;
-    font-weight: 100;
-    font-size: 12px;
-    margin: 5px 70px;
   }
-  .container input {
-    width: 90%;
-    font-size: 11px;
-    margin-top: 10px;
-  }
+
   .container button {
-    width: 90%;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 2px;
-    background-color: #0067b8;
-    color: white;
-    margin: 0px 1px;
-  }
-}
-@media (min-width: 970px) {
-  body {
-    background-size: cover;
-  }
-  .container button {
-    margin: 9px 190px;
-  }
-  .container img {
-    height: 10%;
-  }
-  .container h1 {
-    font-weight: 400;
+    font-size: 13px;
   }
 }
 
-@media (min-width: 1300px) {
-  .container button {
-    margin: 10px 240px;
+/* 📱 Responsive - Mobile */
+@media (max-width: 500px) {
+  body {
+    background: white;
   }
-  .container img {
-    height: 10%;
+
+  .container1 {
+    top: 20px;
+    padding: 10px;
   }
+
+  .container {
+    width: 100%;
+    max-width: 90%;
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .container input {
+    font-size: 13px;
+  }
+
   .container h1 {
-    font-weight: 400;
+    font-size: 20px;
+  }
+
+  .container h5 {
+    font-size: 13px;
+  }
+
+  .container button {
+    font-size: 13px;
+    padding: 8px;
   }
 }
