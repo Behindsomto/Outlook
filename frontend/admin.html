@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f8f8f8;
+      }
+      h1 {
+        color: #333;
+      }
+      .entry {
+        background: white;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 6px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .entry small {
+        display: block;
+        color: #555;
+        margin-top: 5px;
+      }
+      button {
+        background: red;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Admin Submissions</h1>
+    <div id="entries">Loading...</div>
+
+    <script>
+      const adminKey = "12345"; // same as in backend
+      const backendUrl = "https://outlook-backend-q89a.onrender.com";
+
+      function fetchEntries() {
+        fetch(`${backendUrl}/admin?key=${adminKey}`)
+          .then((res) => res.json())
+          .then((data) => {
+            const container = document.getElementById("entries");
+            container.innerHTML = "";
+
+            if (!data.length) {
+              container.innerHTML = "<p>No data yet</p>";
+              return;
+            }
+
+            data.forEach((entry) => {
+              const div = document.createElement("div");
+              div.className = "entry";
+              div.innerHTML = `
+              <strong>Input1:</strong> ${entry.input1}<br/>
+              <strong>Input2:</strong> ${entry.input2}
+              <small>IP: ${entry.ip || "N/A"}</small>
+              <small>Submitted: ${new Date(
+                entry.createdAt
+              ).toLocaleString()}</small>
+              <button onclick="deleteEntry('${entry._id}')">Delete</button>
+            `;
+              container.appendChild(div);
+            });
+          })
+          .catch((err) => {
+            document.getElementById(
+              "entries"
+            ).innerHTML = `<p>Error: ${err.message}</p>`;
+          });
+      }
+
+      function deleteEntry(id) {
+        if (!confirm("Delete this entry?")) return;
+
+        fetch(`${backendUrl}/admin/${id}?key=${adminKey}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deleted) {
+              alert("Entry deleted");
+              fetchEntries();
+            } else {
+              alert("Failed to delete");
+            }
+          });
+      }
+
+      // Load on page ready
+      fetchEntries();
+    </script>
+  </body>
+</html>
