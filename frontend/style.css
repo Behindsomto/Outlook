@@ -92,7 +92,7 @@ body {
   border-radius: 2px;
   cursor: pointer;
   transition: background-color 0.2s;
-  min-width: 80px;
+  min-width: 50px;
 }
 
 .container button:hover:not(:disabled) {
