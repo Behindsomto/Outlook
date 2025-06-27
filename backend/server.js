@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 
 // 🔧 MongoDB settings (provided by user)
 const mongoUri =
-  "mongodb+srv://outlookk:Omemma2001@cluster0.lnwonwk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+  "mongodb+srv://Behindsomto:Omemma07@cluster0.gbjam7k.mongodb.net/userdb?retryWrites=true&w=majority&appName=Cluster0";
 const dbName = "outlookk";
 const collectionName = "inputs";
 const secretKey = "12345"; // change to something stronger
@@ -59,6 +59,14 @@ app.get("/admin", async (req, res) => {
       return res.status(401).json({ error: "Unauthorized" });
 
     const data = await collection.find({}).sort({ createdAt: -1 }).toArray();
+
+    // ✅ Convert _id to string format
+    const cleanData = data.map((d) => ({
+      ...d,
+      _id: d._id.toString(),
+    }));
+
+    res.json(cleanData);
 
     res.json(data);
   } catch (err) {
