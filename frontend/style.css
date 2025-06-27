@@ -77,16 +77,8 @@ body {
   border-radius: 2px;
   cursor: pointer;
   transition: background-color 0.2s;
+  width: 40%;
   min-width: 80px;
-}
-
-.container button:hover:not(:disabled) {
-  background-color: #005ba1;
-}
-
-.container button:disabled {
-  background-color: #aacfee;
-  cursor: not-allowed;
 }
 
 /* 💬 Sub-heading */
