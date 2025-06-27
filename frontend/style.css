@@ -80,6 +80,15 @@ body {
   min-width: 80px;
 }
 
+.container button:hover:not(:disabled) {
+  background-color: #005ba1;
+}
+
+.container button:disabled {
+  background-color: #aacfee;
+  cursor: not-allowed;
+}
+
 /* 💬 Sub-heading */
 .container h5 {
   display: none;
