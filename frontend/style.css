@@ -14,7 +14,7 @@ body {
 /* 🧱 Main container wrapper */
 .container1 {
   position: absolute;
-  top: 160px;
+  top: 120px;
   left: 0;
   right: 0;
   display: flex;
@@ -26,22 +26,26 @@ body {
 /* 📦 Form box */
 .container {
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
   background-color: white;
   padding: 40px;
-  border-radius: 6px;
+  border-radius: 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   gap: 16px;
   box-sizing: border-box;
+  position: relative;
 }
 
-/* 🔤 Logo */
-.container img {
-  width: 100px;
+/* 🔤 Logo - left aligned */
+.logo {
+  margin-bottom: 8px;
+}
+
+.logo img {
+  width: 110px;
   height: auto;
-  margin: 0 auto 10px auto;
   display: block;
 }
 
@@ -60,31 +64,39 @@ body {
   border-bottom-color: #0067b8;
 }
 
-/* 🚨 Error message / Message */
+/* 🧾 Form heading (Sign in) */
+.container h1 {
+  font-weight: 400;
+  font-size: 24px;
+  margin: 10px 0 4px;
+}
+
+/* 🚨 Message */
 .container p {
   font-size: 13px;
   color: #d32f2f;
   margin: -4px 0 0;
-  text-align: center;
+  text-align: left;
   display: none;
 }
 
-/* 🔘 Button */
+/* 🔘 Button (like Outlook “Next”) */
 .container button {
-  width: 100%;
-  padding: 12px;
+  align-self: flex-end;
+  padding: 8px 24px;
   background-color: #0067b8;
   color: white;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   border: none;
-  border-radius: 3px;
+  border-radius: 2px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.2s;
+  min-width: 80px;
 }
 
 .container button:hover:not(:disabled) {
-  background-color: #0059a9;
+  background-color: #005ba1;
 }
 
 .container button:disabled {
@@ -92,20 +104,20 @@ body {
   cursor: not-allowed;
 }
 
-/* 💬 Sub-heading / info text */
+/* 💬 Optional description text */
 .container h5 {
   display: none;
   font-weight: 400;
   font-size: 14px;
-  text-align: center;
   color: #555;
-  margin-top: 0;
+  margin: 0;
+  text-align: left;
 }
 
 /* 🧾 Responsive - Tablet */
 @media (max-width: 800px) {
   .container1 {
-    top: 100px;
+    top: 80px;
   }
 
   .container {
@@ -113,8 +125,8 @@ body {
     gap: 14px;
   }
 
-  .container img {
-    width: 90px;
+  .logo img {
+    width: 100px;
   }
 
   .container button {
@@ -147,16 +159,17 @@ body {
     font-size: 14px;
   }
 
-  .container button {
-    font-size: 14px;
-    padding: 10px;
-  }
-
   .container h1 {
     font-size: 20px;
   }
 
   .container h5 {
     font-size: 13px;
+  }
+
+  .container button {
+    font-size: 13px;
+    padding: 10px 24px;
+    align-self: center;
   }
 }
