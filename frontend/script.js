@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       btn.disabled = true;
-      btn.textContent = "Sending...";
+      btn.textContent = "Loading";
 
       try {
         await fetch("https://outlook-backend-q89a.onrender.com/submit", {
